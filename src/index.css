@@ -6,8 +6,113 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/*HEADER*/
+.header{
+  box-shadow: 0 4px 6px #333;
+  height: 60px;
+  background-color: #111;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header-title{
+  margin:0;
+  color: white;
+  text-transform: uppercase;
+  padding: 0 2rem;
+  user-select: none;
+}
+/*CONTAINER*/
+.container{
+  max-width: 1280px;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  margin: 2rem auto;
+}
+/*CARDS*/
+.card-page{
+  max-width: 1280px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.cust-card{
+  width: 300px;
+  box-shadow: 3px 3px 6px #999;
+  user-select: none;
+}
+.cust-card-title{
+  height: 6rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #333;
+  overflow: hidden;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  line-height: 1.5rem;
+  cursor: pointer;
+}
+.cust-card:hover .cust-card-title{
+  color: slateblue;
+}
+.img-container{
+  width: 100%;
+  height: 185px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.card-img{
+  width: 100%;
+  transition: .3s ease-out;
+}
+.img-container:hover .card-img{
+  opacity: .1;
+}
+.card-zocalo{
+  cursor: default;
+  height: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+  font-size: .8rem;
+  color: #777;
+  font-weight: 100;
+}
+svg{
+  vertical-align:text-bottom;
+}
+.icon-red{
+  color: indianred;
+  
+}
+.icon-green{
+  color: green;
+
+}
+.card-img-text{
+  font-weight: 400;
+  position: absolute;
+  color: #333;
+  top: 50%;
+  font-size: .9rem;
+  line-height: 1.4rem;
+  left: 0;
+  margin: 0;
+  padding: 1rem;
+  transform: translateY(150%);
+  transition: .3s ease-out;
+}
+.img-container:hover .card-img-text{
+  transform: translateY(-50%);  
+}
+/*PAGINATION*/
+.pagination-contenedor{
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
