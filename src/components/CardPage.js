@@ -14,7 +14,7 @@ const CardPage = () => {
     useEffect(()=>{
         let response;
         let callAPI = async ()=>{
-          await fetch(`https://www.cultura.gob.ar/api/v2.0/convocatorias/?limit=12&&offset=${page*12-12}`,{"Access-Control-Allow-Credentials":"true"}).then(res=>res.json()).then(({results})=>response=results);
+          await fetch(`https://www.cultura.gob.ar/api/v2.0/convocatorias/?limit=12&&offset=${page*12-12}`,{"Access-Control-Allow-Origin":"*"}).then(res=>res.json()).then(({results})=>response=results);
            setConvocatorias(response);
         }
         callAPI();
