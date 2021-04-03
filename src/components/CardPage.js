@@ -2,7 +2,6 @@ import Card from "./Card"
 import Pagination from 'react-bootstrap/Pagination';
 import { useState, useEffect } from "react";
 import {
-    Link,
     useParams
   } from "react-router-dom";
 

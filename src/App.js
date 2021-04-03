@@ -2,7 +2,6 @@ import CardPage from "./components/CardPage"
 import {
   Switch,
   Route,
-  useParams
 } from "react-router-dom";
 function App(){
   return (
