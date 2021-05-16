@@ -1,5 +1,7 @@
 import Card from "./Card"
 import Pagination from 'react-bootstrap/Pagination';
+import Paginator from "./Paginator"
+import callAPI from "./../functions/callAPI.js"
 import { useState, useEffect } from "react";
 import {
     useParams
@@ -8,17 +10,17 @@ import {
 const CardPage = () => {
     let { page } = useParams();
     if(page===undefined){
-      page=0;
+      page=1;
     }
        
     useEffect(()=>{
-        let response;
-        let callAPI = async ()=>{
-          await fetch(`https://www.cultura.gob.ar/api/v2.0/convocatorias/?limit=12&&offset=${page*12-12}`,{"Access-Control-Allow-Origin":"*"}).then(res=>res.json()).then(({results})=>response=results);
-           setConvocatorias(response);
+      let response = {};
+        let newCall = async ()=>{
+          response = await callAPI(page);
+          setConvocatorias(response);
         }
-        callAPI();
-      },[]);
+        newCall();
+      },[page]);
       const [convocatorias, setConvocatorias] = useState([]);
     return (
         <>
@@ -28,18 +30,9 @@ const CardPage = () => {
         <div className="pagination-contenedor">
             <Pagination>
 
-            <Pagination.Prev href={`./${Number(page)-1}`}/>
-            <Pagination.Item  active>{1}</Pagination.Item>
-            <Pagination.Ellipsis />
-            <Pagination.Item>{10}</Pagination.Item>
-            <Pagination.Item>{11}</Pagination.Item>
-            <Pagination.Item>{12}</Pagination.Item>
-            <Pagination.Item>{13}</Pagination.Item>
-            <Pagination.Item>{14}</Pagination.Item>
+            
+            <Paginator page={page}></Paginator>
 
-            <Pagination.Ellipsis />
-            <Pagination.Item>{20}</Pagination.Item>
-            <Pagination.Next href={`./${Number(page)+1}`} />
          
             </Pagination> 
         </div>
