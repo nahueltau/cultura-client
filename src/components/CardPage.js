@@ -1,7 +1,7 @@
 import Card from "./Card"
 import Pagination from 'react-bootstrap/Pagination';
 import Paginator from "./Paginator"
-import callAPI from "./../functions/callAPI.js"
+import callAPI from "../functions/callAPI.js"
 import { useState, useEffect } from "react";
 import {
     useParams
