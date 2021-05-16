@@ -12,7 +12,10 @@ export default function Paginator({page}) {
                     let active = num === Number(page);
 
                     return <Pagination.Item key={num} active={active} href={`./${num}`}>{num}</Pagination.Item>
+                }else{
+                    return <></>
                 }
+
             })}
             {Number(page)+1<21?<Pagination.Next href={`./${Number(page)+1}`} />:<></>}
         </>
